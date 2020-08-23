@@ -56,6 +56,12 @@ export default {
         let cid = ipfsreturn.path
         that.showspinner = false
         window.open('/#/' + cid)
+      } else {
+        this.$notify({
+          title: 'Error!',
+          text: 'No text to upload',
+          type: 'error'
+        })
       }
     },
     editorInit (editor) {
@@ -81,7 +87,7 @@ export default {
       document.body.removeChild(input);
       this.$notify({
         title: 'Success!',
-        text: 'Copied to clipboard',
+        text: 'Text copied to clipboard',
         type: 'success'
       })
     }
